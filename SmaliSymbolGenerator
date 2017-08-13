@@ -1,0 +1,30 @@
+#ifndef _SMALI_SYMBOL_GENERATOR_
+#define _SMALI_SYMBOL_GENERATOR_
+
+
+#include <vector>
+#include <string>
+
+class SmaliSymbolGenerator {
+	private:
+		static SmaliSymbolGenerator instance;
+		SmaliSymbolGenerator();
+		
+		Token* generateToken(std::string);
+
+	public:
+		struct Token{
+			std::string lexeme;
+			std::string type;
+		};
+
+		//Returns Symbol Generator instance
+		SmaliSymbolGenerator getInstance();
+
+		//Disable unecessary operations/functions
+		SmaliSymbolGenerator(const SmaliSymbolGenerator&) = delete;
+ 		SmaliSymbolGenerator& operator= (const SmaliSybolGenerator&) = delete; 
+		
+}
+
+#endif
